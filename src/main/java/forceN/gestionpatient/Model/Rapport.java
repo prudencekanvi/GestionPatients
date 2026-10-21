@@ -1,9 +1,6 @@
 package forceN.gestionpatient.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,4 +20,8 @@ public class Rapport {
    private Long id;
     private Date dateCreation;
     private String type;
+
+    @ManyToOne
+    @JoinColumn(name = "administrateur_id")
+    private Administrateur administrateur;
 }

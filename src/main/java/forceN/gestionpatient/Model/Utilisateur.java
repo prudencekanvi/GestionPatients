@@ -6,7 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
@@ -36,6 +38,9 @@ public class Utilisateur {
     )
 
   private Set<Role> roles = new HashSet<>();
+
+    @OneToMany(mappedBy = "utilisateur")
+    private List<Notification> notification = new ArrayList<>();
 
 }
 

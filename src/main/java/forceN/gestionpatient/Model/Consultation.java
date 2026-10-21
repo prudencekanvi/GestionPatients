@@ -24,4 +24,12 @@ public class Consultation {
     @ManyToOne
     @JoinColumn(name = "medecin_id")
     private Medecin medecin;
+
+    @ManyToOne
+    @JoinColumn(name = "dossierPatient_id")
+    private DossierPatient dossierPatient;
+
+    @OneToOne(mappedBy = "consultation")
+    private Ordonnance ordonnance;
+
 }

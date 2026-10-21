@@ -1,5 +1,6 @@
-package forceN.gestionpatient.entity;
+package forceN.gestionpatient.Model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,8 +12,16 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Consultation {
-    long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private Long id;
     private Date date;
     private String diagnostic;
+
+    @ManyToOne
+    @JoinColumn(name = "medecin_id")
+    private Medecin medecin;
 }

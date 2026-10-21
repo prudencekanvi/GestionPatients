@@ -1,4 +1,4 @@
-package forceN.gestionpatient.entity;
+package forceN.gestionpatient.Model;
 
 public class Administrateur extends Utilisateur {
 }

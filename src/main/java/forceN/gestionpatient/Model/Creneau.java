@@ -1,5 +1,6 @@
-package forceN.gestionpatient.entity;
+package forceN.gestionpatient.Model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,10 +12,18 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Creneau {
-    long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+     private Long id;
     private Date date;
     private String heureDebut;
     private String heureFin;
     private boolean disponible;
+
+    @ManyToOne
+    @JoinColumn(name = "planning_id")
+    private Planning planning;
 }

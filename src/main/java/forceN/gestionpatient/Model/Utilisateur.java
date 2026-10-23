@@ -12,11 +12,12 @@ import java.util.List;
 import java.util.Set;
 
 
-@Getter
-@Setter
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Getter
+@Setter
 public class Utilisateur {
 
     @Id

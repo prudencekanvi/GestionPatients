@@ -11,14 +11,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Getter
-@Setter
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Getter
+@Setter
 public class Patient extends Utilisateur{
-
-
     private Date dateNaissance;
     private String adresse;
     private String telephone;
@@ -29,5 +28,6 @@ public class Patient extends Utilisateur{
 
     @OneToMany(mappedBy = "patient")
     private List<DemandeDisponibilite> demandeDisponibilite = new ArrayList<>();
+
 
 }
